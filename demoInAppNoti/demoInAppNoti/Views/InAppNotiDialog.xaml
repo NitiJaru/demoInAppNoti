@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="demoInAppNoti.Views.InAppNotiDialog">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Top"
+            PositionOut="Center"
+            ScaleIn="0.6"
+            ScaleOut="0.2"
+            DurationIn="600"
+            DurationOut="200"/>
+    </pages:PopupPage.Animation>
+
+    <Frame CornerRadius="5" BackgroundColor="#ed1c24" Padding="10" Margin="10" VerticalOptions="Start" HasShadow="False">
+        <StackLayout Orientation="Horizontal">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseInAppNoti}"/>
+            </StackLayout.GestureRecognizers>
+            <Image x:Name="InAppIcon" VerticalOptions="CenterAndExpand" HeightRequest="20" Margin="0,0,5,0" />
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Label x:Name="InAppTitle" TextColor="White" LineBreakMode="NoWrap" FontAttributes="Bold" />
+                <Label x:Name="InAppMsg" TextColor="White" LineBreakMode="NoWrap" />
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>
